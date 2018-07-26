@@ -1,0 +1,35 @@
+.keyframes(@name; @arguments){
+    @-moz-keyframes @name { @arguments(); }
+    @-webkit-keyframes @name { @arguments(); }
+    @-ms-keyframes @name { @arguments(); }
+    @-o-keyframes @name { @arguments(); }
+    @keyframes @name { @arguments(); }
+}
+
+.animation(@arguments){
+    -webkit-animation: @arguments;
+    -moz-animation: @arguments;
+    animation: @arguments;
+}
+
+.quick-glow(@opacity-from: .4, @opacity-to: 1, @duration: 5s){
+    .keyframes(quick-glow, {
+        0% {
+            opacity: @opacity-from;
+        }
+        20% {
+            opacity: @opacity-to;
+        }
+        30% {
+            opacity: @opacity-to;
+        }
+        50% {
+            opacity: @opacity-from;
+        }
+        100% {
+            opacity: @opacity-from;
+        }
+    });
+
+    .animation(quick-glow @duration linear infinite reverse);
+}
