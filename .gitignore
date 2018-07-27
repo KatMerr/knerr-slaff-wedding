@@ -3,3 +3,4 @@ server/secrets.js
 images/source/**
 client/public/assets/**
 client/public/images/**
+*.env

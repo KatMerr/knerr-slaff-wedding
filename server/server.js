@@ -6,8 +6,8 @@ import { getSecret } from './secrets'
 import GuestRoutes from './routes/guest.routes'
 
 const app = express()
-
 const API_PORT = getSecret("apiPort") || 3001
+const DB_URI = getSecret("dbUri") || ""
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
