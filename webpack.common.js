@@ -1,15 +1,16 @@
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: "./client/src/index.js",
     output: {
-        path: __dirname + "/dist",
+        path: path.join(__dirname + "/client/public/assets"),
         filename: "bundle.js",
         publicPath: "assets"
     },
     devServer: {
         inline: true,
-        contentBase: 'dist',
+        contentBase: './client/public',
         port: process.env.PORT || 3000,
         historyApiFallback: true
     },

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CloudLogo from '../../images/cloud-logo.png'
+import CloudLogo from '../../../images/cloud-logo.png'
 import RandomService from '../services/randomNumbers'
 
 class Clouds extends Component {

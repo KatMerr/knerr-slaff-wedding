@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Clouds from './clouds'
 import RandomService from '../services/randomNumbers'
-import OceanBackground from '../../images/ocean-background-med.jpg'
+import OceanBackground from '../../../images/ocean-background-med.jpg'
 
 class Header extends Component {
     constructor(props){

@@ -6,7 +6,7 @@ import OurStoryPage from './pages/our-story'
 import SitePage from './pages/location'
 import AttirePage from './pages/attire'
 import RSVPPage from './pages/rsvp'
-import PlanksBackground from '../../images/planks-background-med.jpg'
+import PlanksBackground from '../../../images/planks-background-med.jpg'
 
 class Content extends Component {
     constructor(props){
