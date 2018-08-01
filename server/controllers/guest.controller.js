@@ -12,19 +12,23 @@ export function getGuest(req, res) {
 }
 
 export function addGuest(req, res) {
-    if (!req.body.guest.name || !req.body.guest.plus_one || !req.body.guest.email){
-        res.status(403).send(err)
+    console.log(req.body)
+    const {name, plus_one, plus_one_name, email, staying_at_hotel} = req.body
+    if (!name || !plus_one || !email || !staying_at_hotel){
+        res.status(403).send("Required Fields: name, plus_one, email, staying_at_hotel")
     }
-    if (req.body.guest.plus_one && !req.body.guest.plus_one_name){
-        res.status(403).send(err)
+    console.log(plus_one)
+    if (plus_one === true && !plus_one_name){
+        res.status(403).send("Missing Fields: plus_one_name")
     }
 
-    const newGuest = new Guest(req.body.guest)
+    const newGuest = new Guest()
 
-    newGuest.name = req.body.guest.name
-    newGuest.plus_one = req.body.guest.plus_one
-    newGuest.plus_one_name = (newGuest.plus_one) ? req.body.guest.plus_one_name : ""
-    newGuest.email = req.body.guest.email
+    newGuest.name = name
+    newGuest.plus_one = plus_one
+    newGuest.plus_one_name = (newGuest.plus_one) ? plus_one_name : ""
+    newGuest.email = email
+    newGuest.staying_at_hotel = staying_at_hotel
 
     newGuest.save((err, saved) => {
         if (err){
@@ -42,10 +46,11 @@ export function updateGuest(req, res) {
             res.status(500).send(err)
         }
 
-        guest.name = req.body.guest.name || guest.name
-        guest.plus_one = req.body.guest.plus_one || mewGuest.plus_one
-        guest.plus_one_name = req.body.guest.plus_one_name || guest.plus_one_name
-        guest.email = req.body.guest.email || guest.email
+        guest.name = req.body.name || guest.name
+        guest.plus_one = req.body.plus_one || guest.plus_one
+        guest.plus_one_name = req.body.plus_one_name || guest.plus_one_name
+        guest.email = req.body.email || guest.email
+        guest.staying_at_hotel = req.body.staying_at_hotel || guest.staying_at_hotel
 
         guest.save((err, updatedGuest) => {
             if (err) {

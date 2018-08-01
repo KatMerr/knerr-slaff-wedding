@@ -28,9 +28,6 @@ class Clouds extends Component {
         setTimeout(this.beginDrift)
         setInterval(this.generateCloud, 7500)
         setInterval(this.beginDriftOfLastCloud, 7505)
-
-        console.log(this.numberOfClouds)
-        console.log(this.clouds)
     }
 
     beginDrift(){

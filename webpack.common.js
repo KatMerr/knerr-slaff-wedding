@@ -12,7 +12,10 @@ module.exports = {
         inline: true,
         contentBase: './client/public',
         port: process.env.PORT || 3000,
-        historyApiFallback: true
+        historyApiFallback: true,
+        proxy: {
+            '/api': 'http://localhost:' + (process.env.API_PORT || 3001)
+        }
     },
     module: {
         rules: [

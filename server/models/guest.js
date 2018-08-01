@@ -15,6 +15,10 @@ const guestSchema = new Schema({
         type: String,
         require: true,
         unique: true
+    },
+    staying_at_hotel: {
+        type: Boolean,
+        required: true
     }
 })
 
