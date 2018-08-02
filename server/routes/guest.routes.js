@@ -14,7 +14,7 @@ router.route('/guest')
       })
       .post(addGuest)
 
-router.route('/guest:email')
+router.route('/guest/:email')
       .get(getGuest)
       .put(updateGuest)
 

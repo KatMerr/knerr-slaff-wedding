@@ -12,14 +12,13 @@ export function getGuest(req, res) {
 }
 
 export function addGuest(req, res) {
-    console.log(req.body)
-    const {name, plus_one, plus_one_name, email, staying_at_hotel} = req.body
-    if (!name || !plus_one || !email || !staying_at_hotel){
-        res.status(403).send("Required Fields: name, plus_one, email, staying_at_hotel")
+    const {name, email, plus_one, plus_one_name, staying_at_hotel} = req.body
+    console.log(JSON.stringify(req.body))
+    if (!name || !email || typeof plus_one === 'undefined' || typeof staying_at_hotel === 'undefined'){
+        return res.status(403).send("Required Fields: name, plus_one, email, staying_at_hotel")
     }
-    console.log(plus_one)
-    if (plus_one === true && !plus_one_name){
-        res.status(403).send("Missing Fields: plus_one_name")
+    if (plus_one && !plus_one_name){
+        return res.status(403).send("Missing Fields: plus_one_name")
     }
 
     const newGuest = new Guest()
@@ -32,7 +31,7 @@ export function addGuest(req, res) {
 
     newGuest.save((err, saved) => {
         if (err){
-            res.status(500).send(err)
+            return res.status(500).send(err)
         }
         res.json({ guest: saved })
     })
