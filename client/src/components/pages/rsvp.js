@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
+import { getGuest, postGuest } from '../../utils/apiCalls'
 
 class RSVPForm extends Component {
     constructor(props){
@@ -15,28 +16,11 @@ class RSVPForm extends Component {
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.toggleGuest = this.toggleGuest.bind(this)
-        this.postGuest = this.postGuest.bind(this)
     }
 
     toggleGuest(e){
         this.setState({
             bringingPlusOne: !this.state.bringingPlusOne
-        })
-    }
-
-    postGuest(data){
-        return fetch(`/api/guest/`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify(data)
-        }).then((res) =>{
-            if (res.ok){
-                return res.json()
-            } else {
-                throw new Error("Error Posting Guest")
-            }
-        }).then((data) => {
-            return data.guest
         })
     }
 
@@ -52,25 +36,21 @@ class RSVPForm extends Component {
         }
 
         const email = guestInfo["email"]
-        
-        fetch(`/api/guest/${email}`, {
-            method: 'GET'
-        }).then((res) => {
-            if (res.ok){
-                return res.json()
-            } else {
-                throw new Error("Couldn't get guest")
-            }
-        }).then((existingGuest) => {
+
+        getGuest(email)
+        .then((existingGuest) => {
             if (!existingGuest.guest){
-                return this.postGuest(guestInfo)
+                postGuest(guestInfo)
+                .then((newGuest) => {
+                    return console.log(newGuest)
+                })
+            } else {
+                this.setState({
+                    uniqueEmail: false
+                })
             }
-            this.setState({
-                uniqueEmail: false
-            })
             return existingGuest
         })
-
     }
 
     render(){
