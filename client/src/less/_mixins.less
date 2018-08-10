@@ -57,3 +57,18 @@
 
     .animation(quick-glow @duration linear infinite reverse);
 }
+
+.fade-in-rise-up(@opracity-from: 0, @opacity-to: 1, @starting-location: auto, @ending-location: auto, @delay: 2s){
+    .keyframes(fade-in-rise-up, {
+        0% {
+            opacity: @opracity-from;
+            top: @starting-location;
+        }
+        100%{
+            opacity: @opacity-to;
+            top: @ending-location;
+        }
+    });
+
+    .animation(fade-in-rise-up 3s @delay linear forwards);
+}
