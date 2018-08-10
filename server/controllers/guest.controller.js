@@ -5,7 +5,7 @@ export function getGuest(req, res) {
         email: req.params.email
     }).exec((err, guest) => {
         if (err) {
-            res.status(500).send(err)
+            return res.status(500).send(err)
         }
         res.json({guest})
     })
@@ -31,6 +31,7 @@ export function addGuest(req, res) {
 
     newGuest.save((err, saved) => {
         if (err){
+            console.log(err)
             return res.status(500).send(err)
         }
         res.json({ guest: saved })
