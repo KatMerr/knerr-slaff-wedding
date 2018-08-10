@@ -1,15 +1,17 @@
 .navigation-container {
     width: 100%;
-    background-color: white;
+    background-color: @white;
     text-align: center;
     display: flex;
     justify-content: space-around;
-    margin: 20px 0;
+    margin: 20px auto;
+    max-width: @content-width;
     
     a {
         display: block;
         @media (max-width: @screen-sm){
-            color: white;
+            color: @white;
         }
+        .content-font();
     }
 }
