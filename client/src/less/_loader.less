@@ -1,0 +1,19 @@
+.app-loader{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    font-size: 100px;
+    opacity: 1;
+    transition: all 2s linear;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    visibility: visible;
+
+
+    &.complete{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
