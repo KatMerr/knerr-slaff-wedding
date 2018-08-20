@@ -35,6 +35,7 @@
     }
 
     .action-text {
+        cursor: pointer;
         font-family: @stylish-cursive;
         position: absolute;
         top: 75%;
@@ -43,7 +44,8 @@
         width: 100%;
         text-align: center;
         opacity: .3;
-        .quick-glow(.3, .7, 10s)
+        transition: all 1000ms linear;
+        .quick-glow(.3, .8, 10s);
     }
     
 }

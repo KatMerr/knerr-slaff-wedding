@@ -24,7 +24,7 @@ class Header extends Component {
                 <Clouds numClouds={this.numberOfClouds} />
                 <Link to="navigation" smooth={true} duration={500}>
                     <div className="action-text">
-                        Done cloud watching? More info below.
+                        Done cloud watching? Click Here.
                     </div>
                 </Link>
             </div>
