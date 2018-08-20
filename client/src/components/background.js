@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Clouds from './clouds'
 import RandomService from '../utils/randomNumbers'
 import OceanBackground from '../../../images/ocean-background-4-3.jpg'
+import { Link } from 'react-scroll'
 
 class Header extends Component {
     constructor(props){
@@ -21,9 +22,11 @@ class Header extends Component {
                     width: "100%", position: "relative", maxHeight: `${this.state.height}px`}}
                 />
                 <Clouds numClouds={this.numberOfClouds} />
-                <div className="action-text">
-                    Done cloud watching? More info below.
-                </div>
+                <Link to="navigation" smooth={true} duration={500}>
+                    <div className="action-text">
+                        Done cloud watching? More info below.
+                    </div>
+                </Link>
             </div>
         )
     }
