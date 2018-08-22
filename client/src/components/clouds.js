@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CloudLogo from '../../../images/cloud-logo.png'
+import WhiteCloud from '../../../images/white-cloud.png'
 import RandomService from '../utils/randomNumbers'
 
 class Clouds extends Component {
@@ -81,7 +82,7 @@ class Clouds extends Component {
                             top: cloud.locationY, 
                             left: cloud.locationX,
                             transition: cloud.transition }} key={i}>
-                            <img src={CloudLogo} style={{width: "100%"}} />
+                            <img src={WhiteCloud} style={{width: "100%"}} />
                         </div>
                     )
                 }
