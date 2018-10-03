@@ -1,22 +1,32 @@
+require('dotenv').config()
 import express from 'express'
 import bodyParser from 'body-parser'
 import logger from 'morgan'
 import mongoose from 'mongoose'
-import { getSecret } from './secrets'
 import GuestRoutes from './routes/guest.routes'
+const path = require("path")
 
 const app = express()
-const API_PORT = getSecret("apiPort") || 3001
-const DB_URI = getSecret("dbUri") || ""
+const API_PORT = process.env.PORT || 3001
+const DB_URI = process.env.DB_URI || ""
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 app.use(logger('dev'))
-
-mongoose.connect(getSecret("dbUri"))
-var db = mongoose.connection
-db.on('error', console.error.bind(console, 'MongoDB connection Error'))
-
-app.use('/api', GuestRoutes)
-
-app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT}`))
+if (DB_URI){
+    mongoose.connect(DB_URI)
+    var db = mongoose.connection
+    db.on('error', console.error.bind(console, 'MongoDB connection Error'))
+    
+    app.use('/api', GuestRoutes)
+    
+    app.use(express.static(path.join(__dirname, "client", "build")))
+    
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "client", "build", "index.html"))
+    })
+    
+    app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT} DB URI: ${DB_URI}`))
+} else {
+    console.log("No URI")
+}
