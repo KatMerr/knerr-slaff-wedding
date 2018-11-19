@@ -56,18 +56,29 @@ class RSVPForm extends Component {
     render(){
         return (
             <form onSubmit={this.handleSubmit}>
-                <label htmlFor="name">Name: </label>
+                <div>
+                    <label htmlFor="name">Name: </label>
                     <input type="text" id="name" name="name" />
-                <label htmlFor="email">Email: </label>
+                </div>
+                <div>
+
+                    <label htmlFor="email">Email: </label>
                     <input type="email" id="email" name="email" required />
                     {(!this.state.uniqueEmail) ? <div>Please enter a unique Email Address</div> : null}
-                <input type="checkbox" name="plus_one" id="plus_one" onChange={this.toggleGuest} />
+                </div>
+                <div>
+                    <input type="checkbox" name="plus_one" id="plus_one" onChange={this.toggleGuest} />
                     <label htmlFor="plus_one">Are you bringing a guest?</label>
-                {(this.state.bringingPlusOne) ? <span><label htmlFor="guestName">Guest's Name: </label>
+                </div>
+                <div>
+                    {(this.state.bringingPlusOne) ? <span><label htmlFor="guestName">Guest's Name: </label>
                     <input type="text" name="plus_one_name" id="guestName" /></span> : null }
+                </div>
+                <div>
+                    <input type="checkbox" id="hotel" name="hotel" />
+                    <label htmlFor="hotel">Are you staying at Ocean Place Resort and Spa?</label>
+                </div>
                 
-                <input type="checkbox" id="hotel" name="hotel" />
-                <label htmlFor="hotel">Are you staying at Ocean Place Resort and Spa?</label>
                 <button>Send Data</button>
             </form>
         )
