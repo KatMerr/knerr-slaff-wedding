@@ -45,7 +45,12 @@
         text-align: center;
         opacity: .3;
         transition: all 1000ms linear;
-        .quick-glow(.3, .8, 10s);
+        .quick-glow(.3, .9, 10s);
+
+        @media (max-width: @screen-sm-max){
+            font-size: @font-large;
+            top: 80%;
+        }
     }
     
 }

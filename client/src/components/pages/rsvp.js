@@ -55,20 +55,30 @@ class RSVPForm extends Component {
 
     render(){
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label htmlFor="name">Name: </label>
+            <form onSubmit={this.handleSubmit} className='rsvp'>
+                <div class='title'>RSVP FORM</div>
+                <div class='field'>
+                    <label htmlFor="name">Name: </label>
                     <input type="text" id="name" name="name" />
-                <label htmlFor="email">Email: </label>
+                </div>
+                <div class='field'>
+                    <label htmlFor="email">Email: </label>
                     <input type="email" id="email" name="email" required />
                     {(!this.state.uniqueEmail) ? <div>Please enter a unique Email Address</div> : null}
-                <input type="checkbox" name="plus_one" id="plus_one" onChange={this.toggleGuest} />
+                </div>
+                <div class='field'>
+                    <input type="checkbox" name="plus_one" id="plus_one" onChange={this.toggleGuest} />
                     <label htmlFor="plus_one">Are you bringing a guest?</label>
-                {(this.state.bringingPlusOne) ? <span><label htmlFor="guestName">Guest's Name: </label>
-                    <input type="text" name="plus_one_name" id="guestName" /></span> : null }
-                
-                <input type="checkbox" id="hotel" name="hotel" />
-                <label htmlFor="hotel">Are you staying at Ocean Place Resort and Spa?</label>
-                <button>Send Data</button>
+                </div>
+                {(this.state.bringingPlusOne) ? <div class='field'><span><label htmlFor="guestName">Guest's Name: </label>
+                <input type="text" name="plus_one_name" id="guestName" /></span></div> : null }
+                <div class='field'>
+                    <input type="checkbox" id="hotel" name="hotel" />
+                    <label htmlFor="hotel">Are you staying at Ocean Place Resort and Spa?</label>
+                </div>
+                <div class='field'>
+                    <button>Send Data</button>
+                </div>
             </form>
         )
     }
