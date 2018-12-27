@@ -55,7 +55,6 @@ class RSVPForm extends Component {
 
     render(){
         return (
-<<<<<<< HEAD
             <form onSubmit={this.handleSubmit} className='rsvp'>
                 <div class='title'>RSVP FORM</div>
                 <div class='field'>
@@ -63,20 +62,10 @@ class RSVPForm extends Component {
                     <input type="text" id="name" name="name" />
                 </div>
                 <div class='field'>
-=======
-            <form onSubmit={this.handleSubmit}>
-                <div>
-                    <label htmlFor="name">Name: </label>
-                    <input type="text" id="name" name="name" />
-                </div>
-                <div>
-
->>>>>>> 77da638852cbbc92d110745172bc3d78d68329fb
                     <label htmlFor="email">Email: </label>
                     <input type="email" id="email" name="email" required />
                     {(!this.state.uniqueEmail) ? <div>Please enter a unique Email Address</div> : null}
                 </div>
-<<<<<<< HEAD
                 <div class='field'>
                     <input type="checkbox" name="plus_one" id="plus_one" onChange={this.toggleGuest} />
                     <label htmlFor="plus_one">Are you bringing a guest?</label>
@@ -90,22 +79,6 @@ class RSVPForm extends Component {
                 <div class='field'>
                     <button>Send Data</button>
                 </div>
-=======
-                <div>
-                    <input type="checkbox" name="plus_one" id="plus_one" onChange={this.toggleGuest} />
-                    <label htmlFor="plus_one">Are you bringing a guest?</label>
-                </div>
-                <div>
-                    {(this.state.bringingPlusOne) ? <span><label htmlFor="guestName">Guest's Name: </label>
-                    <input type="text" name="plus_one_name" id="guestName" /></span> : null }
-                </div>
-                <div>
-                    <input type="checkbox" id="hotel" name="hotel" />
-                    <label htmlFor="hotel">Are you staying at Ocean Place Resort and Spa?</label>
-                </div>
-                
-                <button>Send Data</button>
->>>>>>> 77da638852cbbc92d110745172bc3d78d68329fb
             </form>
         )
     }

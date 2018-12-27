@@ -1,0 +1,35 @@
+@figure-width: 40%;
+
+.profile {
+    position: relative;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 20px 0;
+    margin: 20px 0;
+    figure {
+        width: @figure-width;
+        position: relative;
+        display: inline-block;
+        img {
+            width: 100%;
+        }
+        figcaption {
+            width: 100%;
+            background-color: blue;
+            text-align: center;
+        }
+    }
+    .description {   
+        padding-left: 30px;
+        width: (100% - @figure-width);
+        transform: translateY(-50%);
+        top: 50%;
+        position: absolute;
+        right: 0;
+        .name {
+            color: @off-black;
+            font-size: @font-title;
+        }
+    }
+
+}
