@@ -6,6 +6,13 @@
     border-bottom: 1px solid black;
     padding: 20px 0;
     margin: 20px 0;
+    overflow: auto;
+
+    &:after {
+        clear: both;
+        content: "";
+        display: table;
+    }
     figure {
         width: @figure-width;
         position: relative;
@@ -22,10 +29,8 @@
     .description {   
         padding-left: 30px;
         width: (100% - @figure-width);
-        transform: translateY(-50%);
-        top: 50%;
-        position: absolute;
-        right: 0;
+        float: right;
+        
         .name {
             color: @off-black;
             font-size: @font-title;

@@ -21,17 +21,20 @@ class Content extends Component {
 
     render(){
         return (
-            <div className="content-container" 
-                 style={{minHeight: `${this.state.minHeight}px`, height: `${this.state.minHeight}px`, backgroundImage: `url(${BeachBackground})`}}>
-                <div className="content-sub-container" style={{position: 'relative', zIndex: 3, backgroundColor: 'rgba(255, 255, 255, .6)', height: '100%', maxWidth: "1000px", margin: '0 auto'}}>
-                    <Switch>
-                        <Route exact path="/" component={Home} />
-                        <Route path="/our-story" component={OurStoryPage} />
-                        <Route path="/location" component={SitePage} />
-                        <Route path="/attire" component={AttirePage} />
-                        <Route path="/rsvp" component={RSVPPage} />
-                        <Route component={Page404} />
-                    </Switch>
+            <div>
+
+                <div className='content-background' style={{backgroundImage: `url(${BeachBackground})`}}></div>
+                <div className="content-container" style={{minHeight: this.state.minHeight}}>
+                    <div className="content-sub-container">
+                        <Switch>
+                            <Route exact path="/" component={Home} />
+                            <Route path="/our-story" component={OurStoryPage} />
+                            <Route path="/location" component={SitePage} />
+                            <Route path="/attire" component={AttirePage} />
+                            <Route path="/rsvp" component={RSVPPage} />
+                            <Route component={Page404} />
+                        </Switch>
+                    </div>
                 </div>
             </div>
         )
