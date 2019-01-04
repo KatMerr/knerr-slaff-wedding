@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Clouds from './clouds'
 import RandomService from '../utils/randomNumbers'
-import OceanBackground from '../../../images/ocean-background-4-3.jpg'
+import OceanBackground from '../../../images/ocean-background.jpg'
 import { Link } from 'react-scroll'
 
 class Header extends Component {

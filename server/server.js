@@ -17,16 +17,16 @@ if (DB_URI){
     mongoose.connect(DB_URI)
     var db = mongoose.connection
     db.on('error', console.error.bind(console, 'MongoDB connection Error'))
-    
-    app.use('/api', GuestRoutes)
-    
-    app.use(express.static(path.join(__dirname, "client", "build")))
-    
-    app.get("*", (req, res) => {
-        res.sendFile(path.join(__dirname, "client", "build", "index.html"))
-    })
-    
-    app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT} DB URI: ${DB_URI}`))
 } else {
-    console.log("No URI")
+    console.log("No URI for DB connection")
 }
+    
+app.use('/api', GuestRoutes)
+
+app.use(express.static(path.join(__dirname, "client", "build")))
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"))
+})
+
+app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT} DB URI: ${DB_URI}`))

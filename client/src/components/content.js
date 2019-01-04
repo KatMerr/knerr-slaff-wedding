@@ -4,11 +4,9 @@ import Home from './pages/home'
 import Page404 from './pages/page404'
 import OurStoryPage from './pages/our-story'
 import SitePage from './pages/location'
-import AttirePage from './pages/attire'
+import RegistryPage from './pages/registry'
 import RSVPPage from './pages/rsvp'
-import PlanksBackground from '../../../images/planks-background-4-3.jpg'
-import BeachBackground from '../../../images/beach-background-4-3.jpg'
-import BeachBackground2 from '../../../images/beach-background2-4-3.jpg'
+import BeachBackground from '../../../images/beach-background.jpg'
 
 class Content extends Component {
     constructor(props){
@@ -30,7 +28,7 @@ class Content extends Component {
                             <Route exact path="/" component={Home} />
                             <Route path="/our-story" component={OurStoryPage} />
                             <Route path="/location" component={SitePage} />
-                            <Route path="/attire" component={AttirePage} />
+                            <Route path="/registry" component={RegistryPage} />
                             <Route path="/rsvp" component={RSVPPage} />
                             <Route component={Page404} />
                         </Switch>

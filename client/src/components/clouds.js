@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CloudLogo from '../../../images/cloud-logo.png'
+import CloudLogo from '../../../images/cloud-logo.gif'
 import WhiteCloud from '../../../images/white-cloud.png'
 import RandomService from '../utils/randomNumbers'
 

@@ -12,24 +12,20 @@
         content: "";
         display: table;
     }
-    figure {
+    figure {    
         width: @figure-width;
-        position: relative;
-        display: inline-block;
+        float: left;
+        margin: 0px 20px 0px 0;
         img {
             width: 100%;
         }
         figcaption {
             width: 100%;
-            background-color: blue;
             text-align: center;
         }
     }
     .description {   
-        padding-left: 30px;
-        width: (100% - @figure-width);
-        float: right;
-        
+        margin-top: 10px;        
         .name {
             color: @off-black;
             font-size: @font-title;
