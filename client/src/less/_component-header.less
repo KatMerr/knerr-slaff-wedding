@@ -1,0 +1,30 @@
+.component-header-container {
+    margin: 20px 0;
+    .header-underline {    
+        height: 5px;
+        width: 100%;
+        margin: 30px 0 40px;
+        position: relative;
+
+        .bar {
+            height: 100%;
+            width: 45%;
+            background-color: @dark-copper;
+            border-radius: 10px;
+
+            &.left {
+                float: left;
+            }
+            &.right {
+                float: right;
+            }
+        }
+        .seashell-icon {
+            width: 6%;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
