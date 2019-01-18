@@ -9,7 +9,8 @@ class RSVPForm extends Component {
         this.state = {
             allowedPlusOne: false,
             bringingPlusOne: false,
-            uniqueEmail: true
+            uniqueEmail: true,
+            showRSVP: false
         }
 
         let checkEmailTimeout
@@ -55,6 +56,7 @@ class RSVPForm extends Component {
 
     render(){
         return (
+            (this.state.showRSVP) ? 
             <form onSubmit={this.handleSubmit} className='rsvp'>
                 <div class='title'>RSVP FORM</div>
                 <div class='field'>
@@ -80,6 +82,7 @@ class RSVPForm extends Component {
                     <button>Send Data</button>
                 </div>
             </form>
+            : <div>RSVP Coming Soon!</div>
         )
     }
 }
