@@ -10,7 +10,10 @@ class ComponentHeader extends Component {
     render() {
         return (
             <div className="component-header-container">
-                <h2 className={this.props.className}>{this.props.heading}</h2>
+                {(this.props.heading) ?
+                    <h2 className={this.props.className}>{this.props.heading}</h2> :
+                    null
+                }
                 {(this.props.underline) ? 
                     <div className="header-underline">
                         <div className="bar left"></div>
@@ -30,7 +33,7 @@ ComponentHeader.defaultProps = {
 }
 
 ComponentHeader.propTypes = {
-    heading: PropTypes.string.isRequired,
+    heading: PropTypes.string,
     className: PropTypes.string,
     underline: PropTypes.bool
 }
