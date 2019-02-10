@@ -20,7 +20,6 @@ class Content extends Component {
     render(){
         return (
             <div>
-
                 <div className='content-background' style={{backgroundImage: `url(${BeachBackground})`}}></div>
                 <div className="content-container" style={{minHeight: this.state.minHeight}}>
                     <div className="content-sub-container">

@@ -25,10 +25,18 @@ class Clouds extends Component {
         this.beginDrift = this.beginDrift.bind(this)
         this.beginDriftOfLastCloud = this.beginDriftOfLastCloud.bind(this)
         this.generateCloud = this.generateCloud.bind(this)
+    }
 
-        setTimeout(this.beginDrift)
-        setInterval(this.generateCloud, 7500)
-        setInterval(this.beginDriftOfLastCloud, 7505)
+    componentWillUnmount(){
+        clearInterval(this.timeout1)
+        clearInterval(this.interval1)
+        clearInterval(this.interval2)
+    }
+
+    componentDidMount(){
+        this.timeout1 = setTimeout(this.beginDrift)
+        this.interval1 = setInterval(this.generateCloud, 7500)
+        this.interval2 = setInterval(this.beginDriftOfLastCloud, 7505)
     }
 
     beginDrift(){

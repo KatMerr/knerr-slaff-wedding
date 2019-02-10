@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { getGuest, addGuest, updateGuest } from '../controllers/guest.controller'
+import { getGuest, allGuests, addGuest, updateGuest } from '../controllers/guest.controller'
 
 const router = new Router()
 
@@ -9,9 +9,7 @@ router.route("/test")
       })
 
 router.route('/guest')
-      .get((req, res) => {
-            res.send("All Guests")
-      })
+      .get(allGuests)
       .post(addGuest)
 
 router.route('/guest/:email')

@@ -1,5 +1,14 @@
 import Guest from '../models/guest'
 
+export function allGuests(req, res){
+    Guest.find().exec((err, guests) => {
+        if (err) {
+            return res.status(500).send(err)
+        }
+        res.json(guests)
+    })
+}
+
 export function getGuest(req, res) {
     Guest.findOne({
         email: req.params.email
