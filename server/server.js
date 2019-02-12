@@ -7,8 +7,8 @@ import GuestRoutes from './routes/guest.routes'
 const path = require("path")
 
 const app = express()
-const API_PORT = process.env.PORT || 3001
-const DB_URI = process.env.DB_URI || "mongodb://KatMerr:K0ny2012@ds145871.mlab.com:45871/knerr-slaff-wedding-guests"
+const API_PORT = process.env.PORT
+const DB_URI = process.env.DB_URI
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
