@@ -13,7 +13,7 @@ export default () => (
                 <NavLink to="/our-story">Our Story</NavLink>
             </Link>
             <Link to="navigation" smooth={true} duration={500}>
-                <NavLink to="/location">Location</NavLink>
+                <NavLink to="/location-info">Location & Info</NavLink>
             </Link>
             <Link to="navigation" smooth={true} duration={500}>
                 <NavLink to="/registry">Registry</NavLink>

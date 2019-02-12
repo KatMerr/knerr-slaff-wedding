@@ -15,12 +15,18 @@
     h2 {
         .content-header-font();
         text-align: center;
+
+        @media (max-width: @screen-sm-max){
+            font-size: @font-mobile-largest;
+            margin: 0;
+        }
     }
 
     h3 {
         .content-text-starter-font();
         display: inline;
         margin-right: 5px;
+        line-height: 1.1;
     }
 
     h4 {

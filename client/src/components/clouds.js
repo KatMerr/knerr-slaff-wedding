@@ -21,7 +21,6 @@ class Clouds extends Component {
         this.state = {
             clouds: this.clouds
         }
-asdfsdaf
         this.beginDrift = this.beginDrift.bind(this)
         this.beginDriftOfLastCloud = this.beginDriftOfLastCloud.bind(this)
         this.generateCloud = this.generateCloud.bind(this)

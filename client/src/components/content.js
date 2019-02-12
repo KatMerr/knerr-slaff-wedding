@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import Home from './pages/home'
 import Page404 from './pages/page404'
 import OurStoryPage from './pages/our-story'
-import SitePage from './pages/location'
+import LocationInfoPage from './pages/location-info'
 import RegistryPage from './pages/registry'
 import RSVPPage from './pages/rsvp'
 import BeachBackground from '../../../images/beach-background.jpg'
@@ -26,7 +26,7 @@ class Content extends Component {
                         <Switch>
                             <Route exact path="/" component={Home} />
                             <Route path="/our-story" component={OurStoryPage} />
-                            <Route path="/location" component={SitePage} />
+                            <Route path="/location-info" component={LocationInfoPage} />
                             <Route path="/registry" component={RegistryPage} />
                             <Route path="/rsvp" component={RSVPPage} />
                             <Route component={Page404} />

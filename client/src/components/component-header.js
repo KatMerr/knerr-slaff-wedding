@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import SeaShellIcon from '../../../images/seashell-icon.svg'
+import SeaShellIcon from '../../../images/seashell-icon-copper.svg'
 
 class ComponentHeader extends Component {
     constructor(props){

@@ -44,12 +44,15 @@
         width: 100%;
         text-align: center;
         opacity: .3;
-        transition: all 1000ms linear;
+        transition: opacity 1000ms linear;
         .quick-glow(.3, .9, 10s);
 
         @media (max-width: @screen-sm-max){
             font-size: @font-large;
             top: 80%;
+        }
+        @media (max-width: @screen-xs-max){
+            font-size: @font-mobile-large;
         }
     }
     
