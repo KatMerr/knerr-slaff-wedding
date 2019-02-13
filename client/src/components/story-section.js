@@ -14,7 +14,7 @@ class StorySection extends Component {
                     {(this.props.paragraphs && this.props.subHeader) ? 
                         <div>
                             <h3>{this.props.subHeader}</h3>
-                            {this.props.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+                            {this.props.paragraphs.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
                         </div>
                         : null
                     }

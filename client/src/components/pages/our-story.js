@@ -95,7 +95,7 @@ export default () =>  (
     <ComponentHeader underline={true} heading="Fun Facts" />
     <div className="story clearfix">
         <ul>
-            {(facts) ? facts.map((fact) => <li className="fact" style={listItemStyle}>{fact.fact} {(fact.image) ? <img src={fact.image} style={{"display": "block", "margin": "30px auto", "maxWidth": "300px"}} /> : null} </li>) : null}
+            {(facts) ? facts.map((fact, i) => <li key={i} className="fact" style={listItemStyle}>{fact.fact} {(fact.image) ? <img src={fact.image} style={{"display": "block", "margin": "30px auto", "maxWidth": "300px"}} /> : null} </li>) : null}
         </ul>
     </div>
     <div className="spacer"></div>

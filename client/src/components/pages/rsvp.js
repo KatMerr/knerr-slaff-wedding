@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import fetch from 'isomorphic-fetch'
 import { getGuest, postGuest } from '../../utils/apiCalls'
 
 class RSVPForm extends Component {
@@ -12,8 +11,6 @@ class RSVPForm extends Component {
             uniqueEmail: true,
             showRSVP: false
         }
-
-        let checkEmailTimeout
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.toggleGuest = this.toggleGuest.bind(this)
