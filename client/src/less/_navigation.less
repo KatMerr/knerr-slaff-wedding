@@ -4,7 +4,8 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    overflow: auto;
+    overflow: hidden;
+    min-height: 60px;
 
     .links-container {
         margin: 20px auto;
@@ -13,16 +14,25 @@
         justify-content: space-around;
         align-items: center;
         max-width: @content-width;
-    }
-    
-    a {
-        display: block;
-        color: #429692;
-        font-family: @serif;
-        font-size: @font-normal;
-        font-weight: 600;
-        text-decoration: none;
-        position: relative
+        transition: margin-top 200ms linear;
+
+        @media (max-width: @screen-xs){
+            display: block;
+        }
+
+        & > a > a{
+            display: block;
+            color: #429692;
+            font-family: @serif;
+            font-size: @font-normal;
+            font-weight: 600;
+            text-decoration: none;
+            position: relative;
+
+            @media (max-width: @screen-sm){
+                margin: 15px 0;
+            }
+        }
     }
 
     a.active {
@@ -37,6 +47,66 @@
                 height: 20px;
                 background-size: cover;
                 background-image: url('data:image/svg+xml;base64,PHN2ZyBzdHlsZT0iZmlsbDogIzQyOTY5MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDQuNDE5Yy0yLjgyNi01LjY5NS0xMS45OTktNC4wNjQtMTEuOTk5IDMuMjcgMCA3LjI3IDkuOTAzIDEwLjkzOCAxMS45OTkgMTUuMzExIDIuMDk2LTQuMzczIDEyLTguMDQxIDEyLTE1LjMxMSAwLTcuMzI3LTkuMTctOC45NzItMTItMy4yN3oiLz48L3N2Zz4=');
+            }
+        }
+    }
+
+    &.mobile {
+        &.opened {
+            .links-container{
+                margin-top: 0;
+            }
+        }
+        &.closed {
+            .links-container{
+                margin-top: -100%;
+            }
+        }
+    }
+
+    .burger-outer-container {
+        display: none;
+        @media (max-width: @screen-xs-max){
+            display: block;
+            width: 1005;
+            position: relative;
+            z-index: 2;
+            background-color: white;
+        }
+
+    }
+    .burger-button {
+        height: 40px;
+        width: 40px;
+        border: @dark-copper 3px solid;
+        border-radius: 5px;
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        transition: all 200ms linear;
+        margin: 10px 0 10px 85%;
+
+        &:hover {
+            background-color: @dark-copper;
+
+            .burger-container span {
+                background-color: @white;
+            }
+        }
+
+        .burger-container {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            span {
+                width: 80%;
+                height: 2px;
+                background-color: @dark-copper;
+                display: block;
+                margin: 5px auto;
             }
         }
     }

@@ -86,6 +86,14 @@ const listItemStyle = {
     "backgroundSize": "20px"
 }
 
+const inlineImageStyle = {
+    "display": "block",
+    "margin": "30px auto",
+    "width": "100%",
+    "maxWidth": "300px",
+    "minWidth": "250px"
+}
+
 export default () =>  (
 
 <div className="our-story">
@@ -93,12 +101,11 @@ export default () =>  (
     <ComponentHeader underline={true} heading="Our Stories" />
     {(stories) ? stories.map((story, i) => <StorySection key={i} floatedImage={story.image} floatDirection={story.float} subHeader={story.subHeader} paragraphs={story.paragraphs} includeHeader={story.includeHeader} />) : null}
     <ComponentHeader underline={true} heading="Fun Facts" />
-    <div className="story clearfix">
+    <div className="fun-facts">
         <ul>
-            {(facts) ? facts.map((fact, i) => <li key={i} className="fact" style={listItemStyle}>{fact.fact} {(fact.image) ? <img src={fact.image} style={{"display": "block", "margin": "30px auto", "maxWidth": "300px"}} /> : null} </li>) : null}
+            {(facts) ? facts.map((fact, i) => <li key={i} className="fact" style={listItemStyle}>{fact.fact} {(fact.image) ? <img src={fact.image} style={inlineImageStyle} /> : null} </li>) : null}
         </ul>
     </div>
-    <div className="spacer"></div>
 </div>
 
 )

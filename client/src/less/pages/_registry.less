@@ -2,6 +2,10 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
+
+    @media (max-width: @screen-xs){
+        display: block;
+    }
 }
 .registry-button {
 
@@ -21,6 +25,13 @@
     @media (max-width: @screen-sm-max){
         margin: 20px 0;
         height: 100px;
+    }
+
+    @media (max-width: @screen-xs){
+        width: 100%;
+        display: block;
+        padding: 0;
+        margin: 20px auto;
     }
 
     img {
