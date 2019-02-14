@@ -31,7 +31,7 @@ export default () => <div>
         <ComponentHeader heading="Location & Accommodations" underline={true} />
         <div>
             <div className="map-container">
-                <iframe width="100%" height="100%" frameBorder="0" src={process.env.MAPS_URI}></iframe>
+                <iframe width="100%" height="100%" frameBorder="0" src={process.env.MAPS_URI || "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJjfQBGNkkwokRPOcDRCuCaWA&key=AIzaSyBT-P9AacF8Y3rLhx4M5LcnUV-f1yAOTZo"}></iframe>
             </div>
             <h4 className="inline-header">Hotels</h4>
             <div className="paragraph"><h5>Ocean Place Resort & Spa</h5> - Overlooking a magnificent stretch of beach in Long Branch, Ocean Place will be the hub for all wedding activities. The stay includes access to a guest-only private beach owned by the resort. We’d love for guests to stay the weekend here and party with us, but completely understand if you are unable to. Their website can be viewed <a href="https://www.oceanplace.com/">here</a>.</div> 
