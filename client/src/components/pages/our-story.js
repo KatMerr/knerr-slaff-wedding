@@ -26,7 +26,7 @@ const stories = [
         subHeader: "Matt Knerr",
         paragraphs: [
             "is from Emmaus, PA where he attended private catholic school all his life with his older brother and sister. He spent his childhood with friends in his neighborhood, playing Runescape and soccer as the goalie and team captain. His college career was filled with Ultimate Frisbee where he, again, became the team captain.",
-            "Matt currently works for Susquehanna University as the sole website developer (making for lonely department parties). When he isn’t reffing basketball in the winter, Matt constantly tries to relive his college youth by participating in not one, not two, but three different frisbee groups."
+            "Matt currently works for Susquehanna University as the sole website developer. When he isn’t reffing basketball in the winter, Matt constantly tries to relive his college youth by participating in not one, not two, but three different frisbee groups."
         ],
         includeHeader: true
     }, {

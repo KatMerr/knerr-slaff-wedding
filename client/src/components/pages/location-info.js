@@ -10,7 +10,7 @@ const genericInformation = [
         info: "Friday, June 14, 2019"
     }, {
         heading: "Start Time",
-        info: "4:00 PM"
+        info: "4:30 PM"
     }, {
         heading: "Location",
         info: "Ocean Place Resort & Spa, Long Branch NJ"
@@ -38,7 +38,7 @@ export default () => <div>
             <div className="paragraph"><h5>Alternative Locations</h5> - We have arranged a list of alternate options in the area that can be found <a href="https://www.HotelPlanner.com/EventPage4816989">here</a>. There are also plenty of options at <a href="https://www.airbnb.com/">airbnb.com</a> for the surrounding area.</div>
             <h4 className="inline-header">Day of Accommodations</h4>
             <div className="paragraph"><h5>Dinner</h5> -  The dinner will be served buffet style with a plethora of food options and open bar access at both the cocktail hour and reception. We are able to take special dietary requests, please notify Matt at <a href="mailto:mattjknerr@gmail.com">mattjknerr@gmail.com</a> (or by other means) if we need to make arrangements.</div>
-            <div className="paragraph"><h5>Parking</h5> - Parking will be complementary. Its recommended to park in front of the building and enter through the main lobby, where the wedding party will be guiding guests towards the ceremony location. The Maitre ‘d will handle validating parking at the conclusion of the event.</div>
+            <div className="paragraph"><h5>Parking</h5> - Parking will be complementary. It’s recommended to park to the far right lot and enter through the main lobby, where the wedding party will be guiding guests towards the ceremony location. The Maitre ‘d will handle validating parking at the conclusion of the event.</div>
             <div className="paragraph"><h5>Accessibility</h5> - The ceremony and cocktail hour will take place in the same location, but the reception hall is located on the second floor of the hotel. Hotel employees can give access to service elevators upon request.</div>
         </div>
     </div>
