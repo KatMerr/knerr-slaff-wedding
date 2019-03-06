@@ -4,9 +4,9 @@ var path = require('path');
 module.exports = {
     entry: "./client/src/index.js",
     output: {
-        path: path.join(__dirname + "/client/public/assets"),
+        path: path.join(__dirname + "/client/public/assets/"),
         filename: "bundle.js",
-        publicPath: "assets"
+        publicPath: "assets/"
     },
     devServer: {
         inline: true,

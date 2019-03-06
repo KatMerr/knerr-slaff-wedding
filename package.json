@@ -4,11 +4,13 @@
   "description": "Wedding Site for Knerr and Slaff",
   "main": "./app/index.js",
   "scripts": {
+    "start": "nodemon server.js --exec babel-node --presets es2015,stage-0",
     "start:client": "./node_modules/.bin/webpack-dev-server --open --config webpack.dev.js",
-    "start:server": "cd ./server && nodemon server.js --exec babel-node --presets es2015,stage-0",
+    "start:server": "nodemon server.js --exec babel-node --presets es2015,stage-0",
     "start:dev": "concurrently \"npm run start:client\" \"npm run start:server\"",
     "build": "webpack --config webpack.prod.js",
-    "analyze": "source-map-explorer ./client/public/assets/bundle**"
+    "analyze": "source-map-explorer ./client/public/assets/bundle**",
+    "heroku-postbuild": "npm run build"
   },
   "author": "Knerr",
   "license": "ISC",
