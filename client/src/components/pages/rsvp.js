@@ -37,7 +37,7 @@ class RSVP extends Component {
                 <ComponentHeader underline={true} />
                 {(this.state.showRSVP) ? 
                     (!this.state.isSubmitted) ? <RSVPForm postGuest={this.postGuest} nameError={this.state.nameError} attendenceError={this.state.attendenceError} /> :
-                    <div className="response">Thank you for your RSVP. {(this.state.isAttending) ? <div>We're excited you'll join us and look forward to seeing you!<br />Please feel free the browser the rest of the site to view Shannon and Matt's stories, location, or the registry.</div> : <div>We're sorry to hear you will be unable to make it.</div>}</div>
+                    <div className="response">Thank you for your RSVP. {(this.state.isAttending) ? <div className="small-text">We're excited you'll join us and look forward to seeing you!<br />Please feel free the browse the rest of the site to view Shannon and Matt's stories, the location of the ceremony, or the registry. We'll see you on June 14th!</div> : <div className="small-test">We're sorry to hear you will be unable to make it.</div>}</div>
                 : <div>RSVP Coming Soon!</div>}
                 <ComponentHeader underline={true} />
             </div>
