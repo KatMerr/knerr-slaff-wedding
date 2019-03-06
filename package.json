@@ -14,9 +14,7 @@
   },
   "author": "Knerr",
   "license": "ISC",
-  "devDependencies": {
-    
-  },
+  "devDependencies": {},
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.3",

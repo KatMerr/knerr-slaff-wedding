@@ -7,7 +7,7 @@ import GuestRoutes from './routes/guest.routes'
 const path = require("path")
 
 const app = express()
-const API_PORT = process.env.API_PORT
+const API_PORT = process.env.PORT
 const DB_URI = process.env.DB_URI
 
 app.use(bodyParser.urlencoded({extended: false}))
