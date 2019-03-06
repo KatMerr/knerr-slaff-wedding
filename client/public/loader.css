@@ -51,3 +51,9 @@
         font-size: 50px !important;
     }  
 }
+
+@media (max-width: 500px){
+    .app-loader span {
+        font-size: 40px !important;
+    }
+}

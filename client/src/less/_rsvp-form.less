@@ -1,0 +1,96 @@
+form.rsvp {
+    padding: 20px;
+    text-align: center;
+
+    @media (max-width: @screen-sm){
+        padding: 0;
+    }
+    .title {
+        font-size: @font-title;
+        font-family: @serif;
+
+        @media (max-width: @screen-sm){
+            font-size: @font-inline-title;
+        }
+
+        .small-text {
+            font-size: 14px;
+            display: block;
+        }
+    }
+    .field {
+        margin: 20px 0;
+        font-family: @serif;
+        font-size: 1.5rem;
+        label {
+            margin-right: 5px;
+            display: inline-block;
+            pointer-events: none;
+        }
+        input {
+            font-family: @serif;
+            font-size: 1.5rem;
+            background-color: transparent;
+        }
+        input[type=text], input[type=number]{
+            border: none;
+            border-bottom: 1px solid black;
+            outline: none;
+            
+            @media (max-width: @screen-sm){
+                width: 90%;
+                display: inline;
+            }
+        }
+        input[type=number]{
+            width: 50px;
+            text-align: center;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: textfield;
+        }
+        input[type=checkbox]{
+            display: none;
+        }
+        
+        .fake-box {
+            border-bottom: 1px solid black;
+            width: 50px;
+            display: inline-block;
+            position: relative;
+            
+            span {
+                display: none;
+            }
+            &.checked span {   
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%, -100%);
+                display: inline;
+                line-height: 1;
+            }
+        }
+    }
+    button {
+        border: 2px solid @dark-aqua;
+        padding: 10px 15px;
+        background-color: @white;
+        color: @dark-aqua;
+        border-radius: 10px;
+        font-size: @font-inline-title;
+        font-family: @serif;
+        outline: none;
+        cursor: pointer;
+        transition: all 100ms linear;
+
+        &:hover {
+            background-color: @dark-aqua;
+            color: @white;
+        }
+    }
+    .error {
+        font-size: 16px;
+        font-weight: 600;
+        color: @light-aqua;
+    }
+}

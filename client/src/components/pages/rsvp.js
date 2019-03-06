@@ -1,87 +1,48 @@
 import React, { Component } from 'react'
-import { getGuest, postGuest } from '../../utils/apiCalls'
+import { postGuest } from '../../utils/apiCalls'
+import RSVPForm from '../rsvp-form'
+import ComponentHeader from '../component-header'
 
-class RSVPForm extends Component {
+class RSVP extends Component {
     constructor(props){
         super(props)
 
         this.state = {
-            allowedPlusOne: false,
-            bringingPlusOne: false,
-            uniqueEmail: true,
-            showRSVP: false
+            showRSVP: true,
+            nameError: false,
+            attendenceError: false,
+            isSubmitted: false,
+            isAttending: false,
+            names: ""
         }
 
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.toggleGuest = this.toggleGuest.bind(this)
+        this.postGuest = this.postGuest.bind(this)
     }
 
-    toggleGuest(e){
-        this.setState({
-            bringingPlusOne: !this.state.bringingPlusOne
-        })
-    }
-
-    handleSubmit(e){
-        e.preventDefault()
-        const data = new FormData(e.target)
-        const guestInfo = {
-            'name': data.get("name"),
-            'email': data.get("email"),
-            'plus_one': data.has('plus_one') ? true : false,
-            'plus_one_name': data.get("plus_one_name"),
-            'staying_at_hotel': data.has("hotel") ? true : false
-        }
-
-        const email = guestInfo["email"]
-
-        getGuest(email)
-        .then((existingGuest) => {
-            if (!existingGuest.guest){
-                postGuest(guestInfo)
-                .then((newGuest) => {
-                    return console.log(newGuest)
-                })
-            } else {
-                this.setState({
-                    uniqueEmail: false
-                })
-            }
-            return existingGuest
+    postGuest(guestInfo){
+        postGuest(guestInfo)
+        .then(() => {
+            this.setState({
+                names: guestInfo.names,
+                isSubmitted: true,
+                isAttending: !(guestInfo.not_attending)
+            })
+            return;
         })
     }
 
     render(){
         return (
-            (this.state.showRSVP) ? 
-            <form onSubmit={this.handleSubmit} className='rsvp'>
-                <div class='title'>RSVP FORM</div>
-                <div class='field'>
-                    <label htmlFor="name">Name: </label>
-                    <input type="text" id="name" name="name" />
-                </div>
-                <div class='field'>
-                    <label htmlFor="email">Email: </label>
-                    <input type="email" id="email" name="email" required />
-                    {(!this.state.uniqueEmail) ? <div>Please enter a unique Email Address</div> : null}
-                </div>
-                <div class='field'>
-                    <input type="checkbox" name="plus_one" id="plus_one" onChange={this.toggleGuest} />
-                    <label htmlFor="plus_one">Are you bringing a guest?</label>
-                </div>
-                {(this.state.bringingPlusOne) ? <div class='field'><span><label htmlFor="guestName">Guest's Name: </label>
-                <input type="text" name="plus_one_name" id="guestName" /></span></div> : null }
-                <div class='field'>
-                    <input type="checkbox" id="hotel" name="hotel" />
-                    <label htmlFor="hotel">Are you staying at Ocean Place Resort and Spa?</label>
-                </div>
-                <div class='field'>
-                    <button>Send Data</button>
-                </div>
-            </form>
-            : <div>RSVP Coming Soon!</div>
+            <div>
+                <ComponentHeader underline={true} />
+                {(this.state.showRSVP) ? 
+                    (!this.state.isSubmitted) ? <RSVPForm postGuest={this.postGuest} nameError={this.state.nameError} attendenceError={this.state.attendenceError} /> :
+                    <div className="response">Thank you for your RSVP. {(this.state.isAttending) ? <div>We're excited you'll join us and look forward to seeing you!<br />Please feel free the browser the rest of the site to view Shannon and Matt's stories, location, or the registry.</div> : <div>We're sorry to hear you will be unable to make it.</div>}</div>
+                : <div>RSVP Coming Soon!</div>}
+                <ComponentHeader underline={true} />
+            </div>
         )
     }
 }
 
-export default RSVPForm
+export default RSVP

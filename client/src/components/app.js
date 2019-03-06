@@ -33,7 +33,7 @@ class App extends Component {
         const { loading, showContent } = this.state;
 
         if (!loading && showContent){
-            setTimeout(() => {document.getElementById("app-loader").classList.add("complete")}, 500)
+            setTimeout(() => {document.getElementById("app-loader").classList.add("complete")}, 300)
         } else if (!showContent){
             document.getElementById("app-loader").classList.add("complete")
         }

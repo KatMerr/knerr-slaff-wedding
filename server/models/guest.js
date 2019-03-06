@@ -2,23 +2,17 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const guestSchema = new Schema({
-    name: {
+    names: {
         type: String,
-        require: true
+        required: [true, "Must include name in RSVP"]
     },
-    plus_one: {
+    number_attending: {
+        type: Number,
+        required: false
+    },
+    not_attending: {
         type: Boolean,
-        require: true
-    },
-    plus_one_name: String,
-    email: {
-        type: String,
-        require: true,
-        unique: true
-    },
-    staying_at_hotel: {
-        type: Boolean,
-        required: true
+        required: false
     }
 })
 

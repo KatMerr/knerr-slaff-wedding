@@ -14,7 +14,7 @@ export default () => (
         </div>
         <div>Otherwise click directly to the individual store registeries:</div>
         <div className='button-container'>
-            <a target="_blank" href="tgt.gifts/d77f347fc54449acb024e517fc4f7f28"><div className='registry-button'><img src={TargetLogo} /></div></a>
+            <a target="_blank" href="https://www.target.com/gift-registry/giftgiver?registryId=d77f347fc54449acb024e517fc4f7f28&type=WEDDING&clkid=462ccb90Nc492d80436e4b46c1fbc3111&lnm=81938&afid=The%20Knot%2C%20Inc%20and%20Subsidiaries&ref=tgt_adv_xasd0002"><div className='registry-button'><img src={TargetLogo} /></div></a>
             <a target="_blank" href="https://www.westelm.com/registry/f5dhhtbfkr/registry-list.html"><div className='registry-button'><img src={WestElmLogo} /></div></a>
             <a target="_blank" href="https://www.macys.com/wgl/registry/guest/6973594"><div className='registry-button'><img src={MacysLogo} /></div></a>
         </div>

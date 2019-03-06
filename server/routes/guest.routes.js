@@ -12,7 +12,7 @@ router.route('/guest')
       .get(allGuests)
       .post(addGuest)
 
-router.route('/guest/:email')
+router.route('/guest/:names')
       .get(getGuest)
       .put(updateGuest)
 
